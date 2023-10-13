@@ -2,8 +2,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height:100%;
-
 }
 
 /* header {
@@ -12,7 +10,7 @@ body {
     text-align: center;
     padding: 40px 0;
     height: 40px;
-} */
+}*/
 
 .header {
     display: flex;
@@ -117,29 +115,6 @@ h2 {
 
 
 }
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-}
-
-.btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
 .button-add{
     display: block; /* 블록 레벨 요소로 변경 */
     text-align: right; /* 오른쪽 정렬 */
@@ -174,36 +149,6 @@ footer {
     text-align: center;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #000;
-}
-
-table, th, td {
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-}
-
-.center {
-    text-align: center;
-}
-
-.textarea {
-    width: 100%;
-}
-
-.submit-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
 
 .btn-group {
     display: inline-block;
