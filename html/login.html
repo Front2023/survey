@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../css/login.css">
-  <title>Your Website</title>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <title>Login Page</title>
 </head>
 <body>
+
+
 <header class="header">
   <img class="logo", src="../img/image_2.png">
   <h1>Chosun.servey</h1>
@@ -34,7 +41,7 @@
             <label><input type="radio" name="option" value="admin">관리자</label><br>
           </div>
             <input type="text" id="username" placeholder="이름을 입력해주세요." required><br>
-            <input type="userid" id="userid" placeholder="학번 / 교번을 입력해주세요." required><br>
+            <input type="number" id="userid" placeholder="학번 / 교번을 입력해주세요." required><br>
             <input type="password" id="password" placeholder="비밀번호를 입력해주세요." required><br>
             <input type="password" id="pwd" placeholder="비밀번호를 재입력해주세요." required><br>
           <div class="gender">
@@ -46,6 +53,9 @@
               <label for="depart">학과:</label>
               <select name="department" id="depart">
                 <option value="컴공">컴퓨터공학과</option>
+                <option value="정통">정보통신공학부</option>
+                <option value="전자">전자공학부</option>
+                <option value="인공">인공지능공학부</option>
               </select>
             </div>
             <div class="dropdown2">
@@ -61,14 +71,25 @@
             </div>
           </div>
           <input type="date" id="date" name="date"> <!--//현재날짜를 가입날짜로-->
-          <button type="submit">가입</button>
+          <button type="submit" onclick={redirectToListPag} >가입</button>
+
+
+
         </form>
       </div>
   </main>
 </div>
 
+<div id="root">
+  <!-- React 애플리케이션을 렌더링할 위치 -->
+</div>
+
 <footer>
   <p>&copy; 2023 Your Website</p>
 </footer>
+
+<script src="/static/js/bundle.js"></script>
+<script src="/static/js/1.chunk.js"></script>
+<script src="/static/js/main.chunk.js"></script>
 </body>
 </html>
