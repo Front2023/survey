@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    min-height: 100vh; /* 최소 높이를 브라우저 뷰포트의 100%로 고정 */
+}
+
+.sidebar {
+    width: 30vh;
+    background: #bad3e6;
+    padding: 20px;
+    box-sizing:border-box ;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+    color: white;
+    font-weight: bold;
+}
+
+li a:hover {
+    background: #0C578E;
+    color: white;
+}
+
+li a.home {
+    background: #333;
+    color: #fff;
+}
