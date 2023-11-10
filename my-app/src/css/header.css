@@ -23,6 +23,7 @@ nav a{
    text-decoration: none;
    color: inherit;
 }
+
 .logo {
     width: 80px; /* 원하는 너비로 조절 */
     height: 80px; /* 높이 자동으로 조절 (비율 유지) */

@@ -1,53 +1,49 @@
 import React, { useState } from 'react';
-import './css/Login.css';
+import './css/mainbefore.css';
+import axios from 'axios';
 import Header from './header';
 import Sidebar from './sidebar';
 import Footer from './footer';
 
-const Login = () => {
+function Mainbefore () {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!selectedOption) {
+      alert('유형을 선택해주세요.');
+      return;
+    }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = { userId, password, selectedOption }; // 전송할 데이터
-
-    fetch('http://example.com/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // 성공한 경우에 대한 동작을 추가하세요
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        // 실패한 경우에 대한 동작을 추가하세요
-        console.error('Error:', error);
+    try {
+      const response = await axios.post('/api/mainbefore', {
+        userId,
+        password,
+        userType: selectedOption,
       });
-    console.log('User ID:', userId);
-    console.log('Password:', password);
-    console.log('Selected Option:', selectedOption);
+
+      if (response.status === 200) {
+        //mainafter 페이지로 이동
+      } else {
+        alert('로그인 실패. 입력 값을 확인해주세요.');
+      }
+    } catch (error) {
+      console.error('로그인 중 오류 발생:', error);
+      alert('로그인 중 예기치 않은 오류가 발생했습니다.');
+    }
   };
 
   return (
-    <div className="login-container">
+    <div className="mainbefore-container">
       <Header />
       <div className="container">
         <Sidebar />
         <main>
-          <div className="login">
+          <div className="mainbefore">
             <h2>로그인</h2>
-            <form id="login-form" onSubmit={handleSubmit}>
+            <form id="mainbefore-form" onSubmit={handleSubmit}>
                   <label>
                     <input type="radio" name="option" value="student" onChange={(e) => setSelectedOption(e.target.value)}/>
                     학생
@@ -65,7 +61,7 @@ const Login = () => {
               <br />
               <input type="password" id="password" placeholder="비밀번호" value={password} onChange={(e) => setPassword(e.target.value)} required />
               <br /><br />
-              <button type="submit">로그인</button>
+              <button type="submit" id="loginBtn">로그인</button>
             </form>
           </div>
         </main>
@@ -75,4 +71,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Mainbefore;

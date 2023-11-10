@@ -4,7 +4,8 @@ import './css/header.css';
 const Header = () => {
   return (
     <header className="header">
-      <img className="logo" src="./img/image_2.png" alt="logo" />
+      <img className='logo' src={process.env.PUBLIC_URL + './image_2.png'} alt="logo" />
+
       <h1>Chosun.servey</h1>
       <nav>
         <h3><a href="mainbefore.html">로그인</a></h3>
@@ -13,5 +14,7 @@ const Header = () => {
     </header>
   );
 };
-//이미지 안 나오는 오류 해결하기
 export default Header;
+
+//페이지 이동 문제 해결하기
+//로그인 전 후 다르게 나와야 하는데 어떻게 할거니
