@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './css/setting.css';
-import Header from './header';
-import Sidebar from './sidebar';
-import Footer from './footer';
+import '../style/setting.css';
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
+import Footer from '../components/footer';
 
 function Setting () {
   const [users, setUsers] = useState([]);

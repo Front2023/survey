@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './css/exit.css';
-import Header from './header';
-import Sidebar from './sidebar';
-import Footer from './footer';
+import '../style/exit.css';
+import Header from '../components/header';
+import Sidebar from '../components/sidebar';
+import Footer from '../components/footer';
 
 function Exit(){
   const [password, setPassword] = useState('');
