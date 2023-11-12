@@ -21,42 +21,49 @@ function Result1(){
         setSurveys(mockSurveys); // 서버에서 받아온 데이터로 설정해야 합니다.
     }, []);
 
-  return (
-    <div className="exit-container">
-      <Header />
-      <div className="container">
-        <Sidebar />
-        <main>
-        <div>
-            <h2>설문 목록</h2>
-            <table className="custom-table">
-                <thead>
-                <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>등록자</th>
-                    <th>등록일자</th>
-                    <th>마감일</th>
-                </tr>
-                </thead>
-                <tbody>
-                {surveys.map((survey) => (
-                    <tr key={survey.id}>
-                        <td>{survey.id}</td>
-                        <td>{survey.title}</td>
-                        <td>{survey.creator}</td>
-                        <td>{survey.date}</td>
-                        <td>{survey.deadline}</td>
-                    </tr>
-                ))}
-                </tbody>
-            </table>
+    return (
+        <div className="exit-container">
+            <Header />
+            <div className="container">
+                <Sidebar />
+                <main>
+                    <div className="btn-group">
+                        <a href="/result1" className="btn">만든설문</a>
+                        <a href="/myservey" className="btn">작성한설문</a>
+                        <h2>만든설문</h2>
+                    </div>
+                        <table className="custom-table">
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <td>통계</td>
+                                <th>등록자</th>
+                                <th>등록일자</th>
+                                <th>마감일</th>
+                            </tr>
+                            <tbody>
+                            {surveys.map((survey) => (
+                                <tr key={survey.id}>
+                                    <td>{survey.id}</td>
+                                    <td>{survey.title}</td>
+                                    <td>
+                                        <a href="/result2">
+                                            <button>보기</button>
+                                        </a>
+                                    </td> {/* 보기 버튼 추가 */}
+                                    <td>{survey.creator}</td>
+                                    <td>{survey.date}</td>
+                                    <td>{survey.deadline}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+
+                </main>
+            </div>
+            <Footer />
         </div>
-        </main>
-      </div>
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default Result1;

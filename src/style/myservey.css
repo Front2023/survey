@@ -10,6 +10,10 @@
     padding: 10px;
     text-align: center;
 }
+.custom-table td:first-child {
+    width: 50px; /* 번호 셀의 너비를 조절하세요 */
+    /* 다른 스타일 속성 추가 가능 */
+}
 
 
 .btn-group {

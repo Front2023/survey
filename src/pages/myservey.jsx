@@ -12,8 +12,9 @@ function Myservey(){
         <Sidebar />
         <main>
             <div class="btn-group">
-            <a href="#" class="btn">만든설문</a>
-            <a href="#" class="btn">작성한설문</a>
+            <a href="/result1" class="btn">만든설문</a>
+            <a href="/myservey" class="btn">작성한설문</a>
+                <h2>작성한설문</h2>
             </div>
             <table class = "custom-table">
             <tr>
