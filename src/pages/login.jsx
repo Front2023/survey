@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style/login.css';
 import Header from '../components/header';
@@ -6,6 +7,8 @@ import Sidebar from '../components/sidebar';
 import Footer from '../components/footer';
 
 function Login ()  {
+  const navigate = useNavigate();
+
   const [selectedOption, setSelectedOption] = useState(''); 
   const [name, setName] = useState('');
   const [userId, setUserId] = useState('');
@@ -51,7 +54,7 @@ function Login ()  {
 
       if (response.status === 200) {
         alert('가입이 성공적으로 완료되었습니다.');
-        //mainbefore 페이지로 이동
+        navigate('/mainbefore');
       } else {
         alert('가입 중 오류가 발생했습니다.');
       }

@@ -14,7 +14,7 @@ const Sidebar = () => {
   }
   
   const goToservey = () => {
-    navigate("/myservey");
+    navigate("/mysurvey");
   }
   const goTomypage = () => {
     navigate("/mypage");
@@ -33,5 +33,4 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-//로그인 전, 후 접근권한 달라짐
-//페이지 이동 문제 해결하기
+//로그인 전, 후 접근권한 달라짐??

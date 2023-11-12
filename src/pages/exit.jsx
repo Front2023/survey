@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style/exit.css';
 import Header from '../components/header';
@@ -6,6 +7,8 @@ import Sidebar from '../components/sidebar';
 import Footer from '../components/footer';
 
 function Exit(){
+  const navigate = useNavigate();
+
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
@@ -27,7 +30,7 @@ function Exit(){
 
         if (response.status === 200) {
           alert('회원탈퇴가 성공적으로 처리되었습니다.');
-          // mainbefore 페이지로 이동해야함.
+          navigate('/');
         } else {
           alert('회원탈퇴 처리 중 오류가 발생했습니다.');
         }

@@ -12,7 +12,7 @@ import AnswerSurvey from './pages/answer';
 import MakeSurvey from './pages/make';
 import Result1 from './pages/result1';
 import Result2 from './pages/result2';
-import Myservey from './pages/myservey';
+import Mysurvey from './pages/mysurvey';
 
 function App () {
   return (
@@ -28,7 +28,7 @@ function App () {
         <Route path="/make" element={<MakeSurvey />} />
         <Route path="/result1" element={<Result1 />} />
         <Route path="/result2" element={<Result2 />} />
-        <Route path="/myservey" element={<Myservey/>} />
+        <Route path="/mysurvey" element={<Mysurvey/>} />
       </Routes>
     </BrowserRouter>
   );

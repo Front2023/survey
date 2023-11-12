@@ -1,4 +1,5 @@
 import React, { useState,useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../style/mainafter.css';
 import Header from '../components/header';
@@ -10,6 +11,7 @@ function Mainafter () {
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
+    
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [tableData, setTableData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -29,16 +31,18 @@ function Mainafter () {
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(tableData.length / itemsPerPage); i++) {
         pageNumbers.push(i);
-    }/*
+    }
+    
     useEffect(() => {
-        // 임시 데이터
+        // 임시 데이터(테스트용)
         const tempData = [
           { id: 1, title: 'Task 1', deadline: '2023-11-30' },
           { id: 2, title: 'Task 2', deadline: '2023-11-10' },
         ];
     
         setTableData(tempData);
-      }, []);*/
+      }, []);
+      /*
       useEffect(() => {
     axios.get('/api/data') // 예시: 실제 API 엔드포인트로 변경해야 합니다.
       .then((response) => {
@@ -49,7 +53,7 @@ function Mainafter () {
         console.error('데이터를 불러오는 중 오류 발생:', error);
       });
   }, []);  
-      
+      */
     return (
       <div className = "main-container">
         <Header /> 
@@ -80,15 +84,16 @@ function Mainafter () {
                 <tbody>
                 {currentItems.map((item) => (
                 <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.title}</td>
-                <td>{item.deadline}</td>
-                <td className="color">
-                    <button>응답</button>
-                </td>
+                    <td>{item.id}</td>
+                    <td>{item.title}</td>
+                    <td>{item.deadline}</td>
+                    <td className="color">
+                        <Link to={'/answersurvey/${item.id}'}>
+                            <button>응답</button>
+                        </Link>
+                    </td>
                 </tr>
-            ))}
-          {/* 여기에 추가적인 데이터를 렌더링해주세요 */}
+                 ))}
                 </tbody>
             </table>
             <div id="pagination">
@@ -129,3 +134,4 @@ function Mainafter () {
   };
   
 export default Mainafter;
+//응답 버튼 누르면 answersurvey 페이지로 이동해야함(단, id 값에 맞는 페이지로)
