@@ -3,9 +3,13 @@ h2 {
     text-align: center;
     margin-right: 650px; /* 원하는 만큼의 마진을 설정 */
 }
-.option {
-     text-align: center; /* 내부 요소를 수평 가운데 정렬 */
- }
+
+/* Add this CSS to your make.css file */
+.custom-box input[type="checkbox"] {
+    width: 16px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+}
+
 .option div{
     display: inline-block; /* 내부 요소를 인라인 블록으로 설정 */
     margin: 10px 0px; /* 내부 요소 사이의 간격 설정 (원하는 간격으로 조정) */

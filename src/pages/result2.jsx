@@ -15,6 +15,14 @@ function Result2(){
             <h2>[질문1]</h2>
             <canvas id="myChart" width="400" height="400"></canvas>
             </div>
+            <div id="chart">
+                <h2>[질문2]</h2>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <div id="chart">
+                <h2>[질문3]</h2>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
             <div id="text">
             <div class="que">
             <h2>[질문4](장문형)</h2>
