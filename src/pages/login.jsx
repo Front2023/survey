@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../style/login.css';
 import Header from '../components/header';
@@ -6,6 +7,8 @@ import Sidebar from '../components/sidebar';
 import Footer from '../components/footer';
 
 function Login ()  {
+  const navigate = useNavigate();
+
   const [selectedOption, setSelectedOption] = useState(''); 
   const [name, setName] = useState('');
   const [userId, setUserId] = useState('');
@@ -15,15 +18,6 @@ function Login ()  {
   const [department, setDepartment] = useState('');//사용자의 학과 저장
   const [grade, setGrade] = useState('1');
   const [birthdate, setBirthdate] = useState('');
-
-  const [departments, setDepartments] = useState([]);//학과 목록
-
-  //학과목록 불러오기
-  useEffect(() => {
-    axios.get('/api/departments')
-      .then(response => setDepartments(response.data.departments))
-      .catch(error => console.error('학과 목록을 불러오는 중 오류 발생:', error));
-  }, []);
 
   //현재 날짜를 가져와서 설정
   useEffect(() => {
@@ -51,7 +45,7 @@ function Login ()  {
 
       if (response.status === 200) {
         alert('가입이 성공적으로 완료되었습니다.');
-        //mainbefore 페이지로 이동
+        navigate('/mainbefore');
       } else {
         alert('가입 중 오류가 발생했습니다.');
       }
@@ -125,13 +119,11 @@ function Login ()  {
             name="department"
             id="depart"
             value={department}
-            onChange={(e) => setDepartments(e.target.value)}
-          >
-            {departments.map(dep => (
-              <option key={dep.id} value={dep.name}>
-                {dep.name}
-              </option>
-            ))}
+            onChange={(e) => setDepartment(e.target.value)}>
+              <option value="com">컴퓨터공학과</option>
+              <option value="elec">전자공학부</option>
+              <option value="commu">정보통신공학부</option>
+              <option value="ai">인공지능공학과</option>
           </select>
           </div>
           <div className="major">

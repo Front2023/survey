@@ -47,7 +47,6 @@ function Mypage () {
 
         if (response.status === 200) {
             alert('회원 정보가 성공적으로 수정되었습니다.');
-            // 수정 성공 시 다른 처리를 수행할 수 있습니다.
         } else {
             alert('회원 정보 수정 중 오류가 발생했습니다.');
         }
@@ -116,7 +115,7 @@ function Mypage () {
                     </div> 
                     <button id="re" type="submit">수정</button>
                 </form>
-                <a href="exit.jsx"> 
+                <a href="/exit"> 
                     <button id="myexit">탈퇴</button>
                 </a>
             </div>

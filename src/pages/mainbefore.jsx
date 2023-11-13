@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../style/mainbefore.css';
 import axios from 'axios';
 import Header from '../components/header';
@@ -6,6 +7,8 @@ import Sidebar from '../components/sidebar';
 import Footer from '../components/footer';
 
 function Mainbefore () {
+  const navigate = useNavigate(); 
+
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
@@ -25,7 +28,7 @@ function Mainbefore () {
       });
 
       if (response.status === 200) {
-        //mainafter 페이지로 이동
+        navigate('/mainafter'); //로그인 성공
       } else {
         alert('로그인 실패. 입력 값을 확인해주세요.');
       }

@@ -16,7 +16,7 @@ const Header = () => {
     <header className="header">
       <img className='logo' src={process.env.PUBLIC_URL + './image_2.png'} alt="logo" />
 
-      <h1>Chosun.servey</h1>
+      <h1>Chosun.survey</h1>
       <nav>
         <h3><a onClick={goToLogin}>로그인</a></h3>
         <h3><a onClick={goToSign}>회원가입</a></h3>

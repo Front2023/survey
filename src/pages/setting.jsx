@@ -104,4 +104,5 @@ function Setting () {
 
 export default Setting;
 
-//페이지네이션 해야될듯?
+//페이지네이션 해야될까요..?
+//결과보기 버튼 누르면 해당 answersurvey 페이지로 이동해야함..

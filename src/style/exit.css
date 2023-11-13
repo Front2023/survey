@@ -40,4 +40,5 @@ input{
     letter-spacing: 1px;
     width: 150px;
     margin-top:20px;
+    cursor: pointer;
 }

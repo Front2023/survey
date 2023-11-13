@@ -28,9 +28,8 @@ function Result1(){
                 <Sidebar />
                 <main>
                     <div className="btn-group">
-                        <a href="/result1" className="btn">만든설문</a>
-                        <a href="/myservey" className="btn">작성한설문</a>
-                        <h2>만든설문</h2>
+                        <a href="/result1" id="btn">만든설문 </a>
+                        <a href="/mysurvey" id="btn1">작성한설문</a>
                     </div>
                         <table className="custom-table">
                             <tr>
@@ -67,3 +66,4 @@ function Result1(){
 };
 
 export default Result1;
+//통계 버튼 해당 result2 페이지로 이동해야함(설문마다 다름)
