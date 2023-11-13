@@ -1,7 +1,7 @@
 .custom-table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 800px; /* 테이블의 최대 너비 설정 */
+    max-width: 800px;  /*테이블의 최대 너비 설정 */
     margin: 20px auto; /* 가운데 정렬 */
 }
 
@@ -13,4 +13,43 @@
 .custom-table td:first-child {
     width: 50px; /* 번호 셀의 너비를 조절하세요 */
     /* 다른 스타일 속성 추가 가능 */
+}
+
+.container {
+    display: flex;
+}
+
+.main-content {
+    flex-grow: 1; /* This will allow the main content to grow and fill the available space */
+    /* Add padding, margins, or other styles as needed */
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.textarea {
+    width: 100%;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }

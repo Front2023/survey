@@ -19,10 +19,6 @@
     display: flex;
 }
 
-.sidebar {
-    /* Adjust sidebar styles if necessary */
-}
-
 .main-content {
     flex-grow: 1; /* This will allow the main content to grow and fill the available space */
     /* Add padding, margins, or other styles as needed */
